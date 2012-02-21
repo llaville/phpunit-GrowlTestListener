@@ -1,0 +1,19 @@
+<phpunit bootstrap="/home/github/php-compat-info/PHP/CompatInfo/Autoload.php">
+    <testsuite name="PHP_CompatInfo Test Suite">
+        <directory>/home/github/php-compat-info/tests</directory>
+    </testsuite>
+
+    <listeners>
+        <listener class="GrowlTestListener" 
+                  file="/home/labs/phpunit/testListener/GrowlTestListener.php">
+            <arguments>
+               <string>file:///home/labs/phpunit/testListener/autotest_images/pass.png</string>
+               <string>file:///home/labs/phpunit/testListener/autotest_images/pending.png</string>
+               <string>file:///home/labs/phpunit/testListener/autotest_images/fail.png</string>
+               <string>192.168.1.4</string>
+               <string>mamasam</string>
+               <boolean>true</boolean>
+            </arguments>
+        </listener>
+    </listeners>
+</phpunit>
