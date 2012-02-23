@@ -126,7 +126,7 @@ class GrowlTestListener implements PHPUnit_Framework_Testlistener
             $this->incompleteIcon = file_exists($incompleteIcon)
                 ? $incompleteIcon : false;
         }
-        if (strpos($incompleteIcon, 'file://') === false) {
+        if (strpos($failureIcon, 'file://') === false) {
             // remote resource
             $this->failureIcon = $failureIcon;
         } else {
