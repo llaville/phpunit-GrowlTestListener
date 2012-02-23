@@ -115,6 +115,7 @@ class GrowlTestListener implements PHPUnit_Framework_Testlistener
             $this->successIcon = $successIcon;
         } else {
             // local resource
+            $successIcon       = realpath(substr($successIcon, 7));
             $this->successIcon = file_exists($successIcon)
                 ? $successIcon : false;
         }
@@ -123,6 +124,7 @@ class GrowlTestListener implements PHPUnit_Framework_Testlistener
             $this->incompleteIcon = $incompleteIcon;
         } else {
             // local resource
+            $incompleteIcon       = realpath(substr($incompleteIcon, 7));
             $this->incompleteIcon = file_exists($incompleteIcon)
                 ? $incompleteIcon : false;
         }
@@ -131,6 +133,7 @@ class GrowlTestListener implements PHPUnit_Framework_Testlistener
             $this->failureIcon = $failureIcon;
         } else {
             // local resource
+            $failureIcon       = realpath(substr($failureIcon, 7));
             $this->failureIcon = file_exists($failureIcon)
                 ? $failureIcon : false;
         }
