@@ -1,16 +1,20 @@
 <phpunit bootstrap="/home/github/php-compat-info/PHP/CompatInfo/Autoload.php">
+    <php>
+        <ini name="memory_limit" value="512M" />
+    </php>
+
     <testsuite name="PHP_CompatInfo Test Suite">
         <directory>/home/github/php-compat-info/tests</directory>
     </testsuite>
 
     <listeners>
-        <listener class="GrowlTestListener" 
-                  file="/home/labs/phpunit/testListener/GrowlTestListener.php">
+        <listener class="GrowlTestListener"
+                  file="/home/github/phpunit-GrowlTestListener/GrowlTestListener.php">
             <arguments>
-               <string>file:///home/labs/phpunit/testListener/autotest_images/pass.png</string>
-               <string>file:///home/labs/phpunit/testListener/autotest_images/pending.png</string>
-               <string>file:///home/labs/phpunit/testListener/autotest_images/fail.png</string>
-               <string>192.168.1.4</string>
+               <file>data/autotest_images/pass.png</file>
+               <file>data/autotest_images/pending.png</file>
+               <file>data/autotest_images/fail.png</file>
+               <string>192.168.1.29</string>
                <string>mamasam</string>
                <boolean>true</boolean>
             </arguments>
