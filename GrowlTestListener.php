@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (c) 2012, Laurent Laville <pear@laurent-laville.org>
+ * Copyright (c) 2012-2013, Laurent Laville <pear@laurent-laville.org>
  *
  * Credits to Raphael Stolt on base concept
  *
@@ -345,8 +345,7 @@ class GrowlTestListener implements PHPUnit_Framework_Testlistener
 
         $options  = array(
             'host'     => $this->host,
-            'port'     => Net_Growl::GNTP_PORT,
-            'protocol' => 'tcp',
+            'protocol' => 'gntp',
         );
 
         $this->growl = Net_Growl::singleton(
@@ -385,7 +384,7 @@ class GrowlTestListener implements PHPUnit_Framework_Testlistener
             $options = array(
                 'sticky' => $this->sticky,
             );
-            $response = $this->growl->notify(
+            $response = $this->growl->publish(
                 $channel, $title, $message, $options
             );
 
